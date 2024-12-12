@@ -5,9 +5,11 @@ public class Main {
     public static void main(String[] args) {
         int[] array = {9,6,3,2,7,8,4,1,5};
 
-        bubbleSort(array);
-        System.out.println(Arrays.toString(array));
+        // bubbleSort(array);
+        // System.out.println(Arrays.toString(array));
 
+        selectionSort(array);
+        System.out.println(Arrays.toString(array));
     }
 
     static void bubbleSort(int[] arr ){
@@ -23,7 +25,17 @@ public class Main {
     }
 
     static void selectionSort(int[] arr) {
-
+        for (int x = 0; x < arr.length  - 1; x++) {
+            int min = x;
+            for (int y = x +1 ; y < arr.length; y++) {
+                if (arr[min] > arr[y]) {
+                    min = y;
+                }
+            }
+            int temp = arr[x];
+            arr[x] = arr[min];
+            arr[min] = temp;
+        }
     }
 
     static void insertionSort() {
