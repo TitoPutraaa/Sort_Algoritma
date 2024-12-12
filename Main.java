@@ -8,7 +8,10 @@ public class Main {
         // bubbleSort(array);
         // System.out.println(Arrays.toString(array));
 
-        selectionSort(array);
+        // selectionSort(array);
+        // System.out.println(Arrays.toString(array));
+
+        insertionSort(array);
         System.out.println(Arrays.toString(array));
     }
 
@@ -38,7 +41,15 @@ public class Main {
         }
     }
 
-    static void insertionSort() {
-
+    static void insertionSort(int[] arr) {
+        for (int x = 1; x < arr.length; x++) {
+            int temp = arr[x];
+            int y = x-1;
+            while (y >= 0 && arr[y] > temp) {
+                arr[y+1] = arr[y];
+                y--;
+            }
+            arr[y+1] = temp;
+        }
     }
 }
